@@ -1,0 +1,13 @@
+# Ignore environment files
+*.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+.env.local
+
+# VS Code
+.vscode/
