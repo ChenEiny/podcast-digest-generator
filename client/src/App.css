@@ -1,38 +1,105 @@
-.App {
+:root {
+  --bg: #f9f9f9;
+  --text: #333;
+  --card: white;
+  --border: #ddd;
+  --accent: #0070f3;
+}
+
+[data-theme='dark'] {
+  --bg: #1c1c1e;
+  --text: #f0f0f0;
+  --card: #2c2c2e;
+  --border: #3a3a3c;
+  --accent: #0a84ff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.subtitle {
+  text-align: center;
+  color: var(--text);
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.upload-box {
   display: flex;
-  flex-direction: column;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 2rem;
+}
+
+.upload-box input {
+  font-size: 1rem;
+}
+
+.upload-box button {
+  padding: 0.5rem 1rem;
+  background: var(--accent);
   color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.App-link {
-  color: #61dafb;
+.upload-box button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.upload-box button:hover:not(:disabled) {
+  background: #0056c7;
+}
+
+.result {
+  margin-bottom: 2rem;
+}
+
+.result h2 {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.result pre {
+  background: var(--border);
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.theme-toggle {
+  text-align: right;
+  margin-bottom: 1rem;
 }
