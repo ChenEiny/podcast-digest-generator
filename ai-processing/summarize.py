@@ -17,7 +17,7 @@ def summarize(text):
 
     try:
         response = openai.ChatCompletion.create(
-            model="gpt-4",  # Change to gpt-4 if needed
+            model="gpt-3.5-turbo",  # Change to gpt-4 if needed
             messages=[
                 {"role": "system", "content": "You are a podcast summarizer."},
                 {"role": "user", "content": prompt}
